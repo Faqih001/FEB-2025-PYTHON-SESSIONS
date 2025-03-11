@@ -116,4 +116,33 @@ elif num == 0:
 else:
     print("Negative number")
     
+# Python Loops
+# For Loop
+for i in range(5):
+    print(i)
+
+# While Loop
+i = 0
+while i < 5:
+    print(i)
+    i += 1  # Increment i by 1
+
+# Python Functions
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(3, 5)
+print(result)
+
+# Python Classes and Objects
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+person = Person("John", 30)
+person.greet()
 
