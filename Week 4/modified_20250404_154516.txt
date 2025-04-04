@@ -1,0 +1,5 @@
+Hello there!
+This is a test file.
+It contains multiple lines.
+Each line has some words.
+Let's count them all.

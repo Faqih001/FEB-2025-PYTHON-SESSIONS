@@ -1,25 +1,69 @@
-# Step 1: Read from an existing file
-with open("input.txt", "r") as infile:
-    content = infile.read()
+import logging
+from datetime import datetime
 
-# Step 2: Modify the content (e.g., reverse every line)
-modified_content = "\n".join(line[::-1] for line in content.splitlines())
+# Setup logging
+logging.basicConfig(
+    filename="file_log.txt",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
-# Step 3: Write the modified content to a new file
-with open("modified_output.txt", "w") as outfile:
-    outfile.write(modified_content)
+def read_file(filename):
+    try:
+        with open(filename, "r") as file:
+            content = file.read()
+            print("\n📄 File Content:\n")
+            print(content)
+            logging.info(f"Successfully read file: {filename}")
+            return content
+    except FileNotFoundError:
+        print("❌ Error: File not found.")
+        logging.error(f"File not found: {filename}")
+    except PermissionError:
+        print("❌ Error: No permission to read the file.")
+        logging.error(f"Permission denied: {filename}")
+    except Exception as e:
+        print(f"❌ An unexpected error occurred: {e}")
+        logging.exception("Unexpected error")
+    return None
 
-print("✅ Modified file 'modified_output.txt' created successfully!")
+def modify_and_save(content, output_filename):
+    try:
+        modified = "\n".join(line[::-1] for line in content.splitlines())
+        with open(output_filename, "w") as outfile:
+            outfile.write(modified)
+        print(f"✅ Modified content saved to '{output_filename}'")
+        logging.info(f"Modified content written to {output_filename}")
+    except Exception as e:
+        print(f"❌ Failed to write file: {e}")
+        logging.exception("Error writing file")
 
-try:
-    filename = input("Enter the name of the file to read: ")
-    with open(filename, "r") as file:
-        data = file.read()
-        print("\n📄 File content:")
-        print(data)
-except FileNotFoundError:
-    print("❌ Error: File not found.")
-except PermissionError:
-    print("❌ Error: You don't have permission to read this file.")
-except Exception as e:
-    print(f"❌ An unexpected error occurred: {e}")
+def main_menu():
+    while True:
+        print("\n🗂️ File Tool Menu")
+        print("1. Read a file")
+        print("2. Read & Save Modified (Reversed) version")
+        print("3. Exit")
+        choice = input("Choose an option (1/2/3): ")
+
+        if choice == "1":
+            filename = input("Enter the filename to read: ")
+            read_file(filename)
+
+        elif choice == "2":
+            filename = input("Enter the filename to read & modify: ")
+            content = read_file(filename)
+            if content:
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                output_filename = f"modified_{timestamp}.txt"
+                modify_and_save(content, output_filename)
+
+        elif choice == "3":
+            print("👋 Exiting. All actions have been logged to 'file_log.txt'")
+            break
+
+        else:
+            print("❌ Invalid choice. Please select 1, 2, or 3.")
+
+if __name__ == "__main__":
+    main_menu()
