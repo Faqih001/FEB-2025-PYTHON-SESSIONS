@@ -72,5 +72,8 @@ def main_menu():
         else:
             print("❌ Invalid choice. Please select 1, 2, or 3.")
 
+# This is the entry point of the script. It calls the main_menu function to start the program.
+# The script is designed to be run directly, and the main_menu function is called to initiate the menu-driven interface. The script uses a standard Python convention to check if it is being run as the main module.
+# If it is, the main_menu function is called to start the program. This allows the script to be imported as a module without executing the main menu.
 if __name__ == "__main__":
     main_menu()
