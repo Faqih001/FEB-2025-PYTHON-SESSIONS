@@ -8,6 +8,8 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
+# The above code implements a simple file tool with a menu-driven interface.
+# It allows users to read a file, modify its content (reverse each line), and save the modified content to a new file.
 def read_file(filename):
     try:
         with open(filename, "r") as file:
