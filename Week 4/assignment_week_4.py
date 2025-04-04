@@ -28,7 +28,8 @@ def read_file(filename):
         logging.exception("Unexpected error")
     return None
 
-# This function modifies the content by reversing each line and saves it to a new file with a timestamp. It also logs the success or failure of the operation. The function takes the content and the output filename as parameters. It uses a try-except block to handle potential errors during file writing.
+# This function modifies the content by reversing each line and saves it to a new file with a timestamp. It also logs the success or failure of the operation. 
+# The function takes the content and the output filename as parameters. It uses a try-except block to handle potential errors during file writing.
 def modify_and_save(content, output_filename):
     try:
         modified = "\n".join(line[::-1] for line in content.splitlines())
@@ -40,7 +41,10 @@ def modify_and_save(content, output_filename):
         print(f"❌ Failed to write file: {e}")
         logging.exception("Error writing file")
 
-# This function serves as the main menu for the file tool. It provides options to read a file, modify and save a file, or exit the program. The user's choice is taken as input, and appropriate actions are performed based on the choice. The function also logs each action taken by the user. The menu is displayed in a loop until the user chooses to exit. It handles invalid choices gracefully and logs them as well. The function uses a while loop to keep displaying the menu until the user chooses to exit. It also handles invalid choices and logs them.
+# This function serves as the main menu for the file tool. It provides options to read a file, modify and save a file, or exit the program. 
+# The user's choice is taken as input, and appropriate actions are performed based on the choice. The function also logs each action taken by the user. 
+# The menu is displayed in a loop until the user chooses to exit. It handles invalid choices gracefully and logs them as well. 
+# The function uses a while loop to keep displaying the menu until the user chooses to exit. It also handles invalid choices and logs them.
 def main_menu():
     while True:
         print("\n🗂️ File Tool Menu")
