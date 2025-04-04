@@ -40,6 +40,7 @@ def modify_and_save(content, output_filename):
         print(f"❌ Failed to write file: {e}")
         logging.exception("Error writing file")
 
+# This function serves as the main menu for the file tool. It provides options to read a file, modify and save a file, or exit the program. The user's choice is taken as input, and appropriate actions are performed based on the choice. The function also logs each action taken by the user. The menu is displayed in a loop until the user chooses to exit. It handles invalid choices gracefully and logs them as well. The function uses a while loop to keep displaying the menu until the user chooses to exit. It also handles invalid choices and logs them.
 def main_menu():
     while True:
         print("\n🗂️ File Tool Menu")
