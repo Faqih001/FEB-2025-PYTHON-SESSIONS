@@ -10,3 +10,16 @@ with open("modified_output.txt", "w") as outfile:
     outfile.write(modified_content)
 
 print("✅ Modified file 'modified_output.txt' created successfully!")
+
+try:
+    filename = input("Enter the name of the file to read: ")
+    with open(filename, "r") as file:
+        data = file.read()
+        print("\n📄 File content:")
+        print(data)
+except FileNotFoundError:
+    print("❌ Error: File not found.")
+except PermissionError:
+    print("❌ Error: You don't have permission to read this file.")
+except Exception as e:
+    print(f"❌ An unexpected error occurred: {e}")
