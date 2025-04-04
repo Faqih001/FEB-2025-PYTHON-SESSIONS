@@ -29,6 +29,10 @@ def read_file(filename):
         logging.exception("Unexpected error")
     return None
 
+# This function modifies the content by reversing each line and saves it to a new file with a timestamp.
+# It also logs the success or failure of the operation.
+# The function takes the content and the output filename as parameters.
+# It uses a try-except block to handle potential errors during file writing.
 def modify_and_save(content, output_filename):
     try:
         modified = "\n".join(line[::-1] for line in content.splitlines())
