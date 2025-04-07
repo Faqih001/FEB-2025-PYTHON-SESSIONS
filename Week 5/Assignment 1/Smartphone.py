@@ -40,8 +40,8 @@ class SmartphoneWithCamera(Smartphone):
 my_camera_phone = SmartphoneWithCamera("Samsung", "Galaxy S24", 92, 200)
 
 # Using inherited methods from Smartphone class
-my_camera_phone.make_call("987-654-3210")
-my_camera_phone.send_message("987-654-3210", "Here's a photo!")
+my_camera_phone.make_call("254-742-356789")
+my_camera_phone.send_message("254-742-356789", "Here's a photo!")
 my_camera_phone.check_battery()
 
 # Using the new method specific to SmartphoneWithCamera
