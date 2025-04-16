@@ -27,14 +27,19 @@ Download the project files or clone the repository to your local machine.
 
 1. Open a terminal in the project directory.
 2. Make the setup script executable:
+
    ```bash
    chmod +x setup_venv.sh
    ```
+
 3. Run the setup script to create a virtual environment and install dependencies:
+
    ```bash
    ./setup_venv.sh
    ```
+
 4. Activate the virtual environment:
+
    ```bash
    source venv/bin/activate
    ```
@@ -43,10 +48,13 @@ Download the project files or clone the repository to your local machine.
 
 1. Open a Command Prompt or PowerShell in the project directory.
 2. Run the setup script to create a virtual environment and install dependencies:
+
    ```bat
    setup_venv.bat
    ```
+
 3. Activate the virtual environment:
+
    ```bat
    venv\Scripts\activate
    ```
@@ -69,9 +77,11 @@ The virtual environment (`venv`) will be created, and the following dependencies
 
 1. Ensure the virtual environment is activated (see step 2 in Setup Instructions).
 2. Run the script:
+
    ```bash
    python assignment.py
     ```
+
    Alternatively, in VS Code, click the "Run" button or press `F5` with `assignment.py` open.
 3. The script will:
    - Load the Iris dataset using `scikit-learn`.
