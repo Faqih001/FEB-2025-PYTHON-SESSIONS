@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# setup_venv.sh (Unix/macOS)
+# This script sets up a Python virtual environment and installs the required dependencies for the assignment.
 # Create virtual environment
 python3 -m venv venv
 
